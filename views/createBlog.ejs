@@ -1,0 +1,28 @@
+<!-- /////////////////////////////////////// HEADER ///////////////////////////////////////////////// -->
+<%- include("./header.ejs") %>
+    
+<!-- //////////////////////////////////////// MAIN ////////////////////////////////////////////////// -->
+  <main class="container">
+    <h1 class="display-4 headline-quote">Create new blog</h1>
+    <form action="/create-blog" method="post">
+      <div class="form-group">
+        <label for="title-input"><h4>Title: </h4></label>
+      <input class="form-control" name="title-input" id="title-input" type="text" placeholder="Enter your blog title...">
+      </div>
+      <div class="form-group">
+        <label for="content-input"><h4>Content: </h4></label>
+      <textarea class="form-control" name="content-input" id="content-input" rows="5" placeholder="Express your thoughts..."></textarea>
+      </div>
+      <div class="footer-button">
+        <button type="submit" class="btn action-button">Post your blog</button>
+        <a class="btn action-button" href="/">Cancel</a>
+      </div>
+      
+    </form>
+  </main>
+
+
+<!-- /////////////////////////////////////// FOOTER ///////////////////////////////////////////////// -->
+
+  <%- include("./footer.ejs") %>  
+

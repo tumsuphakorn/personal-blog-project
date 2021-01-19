@@ -1,0 +1,40 @@
+<!-- /////////////////////////////////////// HEADER ///////////////////////////////////////////////// -->
+<%- include("./header.ejs") %>
+    
+<!-- //////////////////////////////////////// MAIN ////////////////////////////////////////////////// -->
+  <!-- <main>
+    <h1>Edit blog</h1>
+    <form action="/edit/<%= blog._id %>" method="post">
+      <label for="title-input">Title: </label>
+      <input name="title-input" id="title-input" type="text" value="<%= blog.title %>">
+      <label for="content-input">Content: </label>
+      <input name="content-input" id="content-input" type="text" value="<%= blog.content %>">
+      <button type="submit" class="btn btn-primary">Save change</button>
+    </form>
+  </main> -->
+
+  <main class="container">
+    <h1 class="display-4 headline-quote">Edit blog</h1>
+    <form action="/edit/<%= blog._id %>" method="post">
+      <div class="form-group">
+        <label for="title-input"><h4>Title: </h4></label>
+      <input class="form-control" name="title-input" id="title-input" type="text" value="<%= blog.title %>">
+      </div>
+      <div class="form-group">
+        <label for="content-input"><h4>Content: </h4></label>
+      <textarea class="form-control" name="content-input" id="content-input" type="text" rows="5"><%= blog.content %></textarea>
+      </div>
+      <div class="footer-button">
+        <button type="submit" class="btn action-button">Save changes</button>
+        <a class="btn action-button" href="/">Cancel</a>
+      
+      </div>
+      
+    </form>
+  </main>
+
+
+<!-- /////////////////////////////////////// FOOTER ///////////////////////////////////////////////// -->
+
+  <%- include("./footer.ejs") %>  
+

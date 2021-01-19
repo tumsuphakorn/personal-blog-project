@@ -1,0 +1,42 @@
+<!-- /////////////////////////////////////// HEADER ///////////////////////////////////////////////// -->
+<%- include("./header.ejs") %>
+    
+<!-- //////////////////////////////////////// MAIN ////////////////////////////////////////////////// -->
+  <main class="container">
+    <div class="text-center">
+      <h1 class="display-3 headline-quote">Search results for "<%= query %>"</h1>
+    </div>
+    
+    <div class="blogs-zone">
+        <% if (results.length !== 0) { %>
+    <% for (let i = results.length - 1; i >= 0; i--) { %>
+      <div class="row">
+        <div class="card col-lg-2 col-sm-4 blog-date">
+            <div class="card-body">
+              <h3><%= results[i].item.createdAt.toString().substring(4, 15) %></h3>
+            </div>
+            <!-- <div class="card-body">
+              <h1><%= results[i].item.createdAt.toString().substring(10, 15) %></h1>
+            </div> -->
+        </div>
+        <div class="card col-lg-9 col-sm-7 blog-content">
+          <div class="card-body">
+            <h1><a href="/blog/<%= results[i].item._id %>"><%= results[i].item.title %></a></h1>
+              <p><%= results[i].item.content.substring(0, 150) %>... </p><a href="/blog/<%= results[i].item._id %>">— Read more —</a>
+          </div>
+        </div>
+      </div>
+      
+    <% } %>
+        <% } else { %> 
+            <h4 class="text-center">Nothing found</h4>
+       <% } %>
+    </div>
+    
+  </main>
+
+
+<!-- /////////////////////////////////////// FOOTER ///////////////////////////////////////////////// -->
+
+  <%- include("./footer.ejs") %>  
+

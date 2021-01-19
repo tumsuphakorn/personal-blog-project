@@ -1,0 +1,38 @@
+<!-- /////////////////////////////////////// HEADER ///////////////////////////////////////////////// -->
+  <%- include("./header.ejs") %>
+    
+<!-- //////////////////////////////////////// MAIN ////////////////////////////////////////////////// -->
+  <main class="container">
+    <div class="text-center">
+      <h1 class="display-3 headline-quote">Blog something on today?</h1>
+      <form action="/create-blog" method="get">
+        <button type="submit" class="btn headline-button">write blog</button>
+      </form>
+    </div>
+    
+    <div class="blogs-zone">
+    <% for (let i = blogs.length - 1; i >= 0; i--) { %>
+      <div class="row">
+        <div class="card col-lg-2 col-sm-4 blog-date">
+            <div class="card-body">
+              <h3><%= blogs[i].createdAt.toString().substring(4, 15) %></h3>
+            </div>
+        </div>
+        <div class="card col-lg-9 col-sm-7 blog-content">
+          <div class="card-body">
+            <h1><a href="/blog/<%= blogs[i]._id %>"><%= blogs[i].title %></a></h1>
+              <p><%= blogs[i].content.substring(0, 150) %>... </p><a href="/blog/<%= blogs[i]._id %>">— Read more —</a>
+          </div>
+        </div>
+      </div>
+      
+    <% } %>
+    </div>
+    
+  </main>
+
+
+<!-- /////////////////////////////////////// FOOTER ///////////////////////////////////////////////// -->
+
+  <%- include("./footer.ejs") %>  
+
