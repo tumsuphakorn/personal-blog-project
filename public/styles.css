@@ -42,11 +42,6 @@ body, html {
     margin: 0 0 12vh 0;
 }
 
-.blogs-zone h3 {
-    padding: 3vh 0;
-    margin-bottom: 0;
-}
-
 .blogs-zone a {
     color: black;
 }
@@ -60,6 +55,11 @@ body, html {
     margin: 1vh;
 }
 
+.blog-date .card-body {
+    display: flex;
+    align-items: center;
+}
+
 .blog-content {
     margin: 1vh;
     border-radius: 20px;
@@ -69,8 +69,8 @@ body, html {
     margin: 4vh 0;
     font-size: 1.5rem;
     font-weight: 400;
+    border-radius: 20px;
 }
-
 .modal-footer {
     justify-content: flex-start;
 }
