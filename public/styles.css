@@ -39,7 +39,7 @@ body, html {
 }
 
 .blogs-zone {
-    margin: 0 0 12vh 0;
+    padding-bottom: 13vh;
 }
 
 .blogs-zone a {
@@ -77,6 +77,10 @@ body, html {
 
 .modal button {
     margin: 2vh 1vw;
+}
+
+.footer-button {
+    padding-bottom: 13vh;
 }
 
 .footer-button button {

@@ -46,7 +46,7 @@ router.post("/edit/:blogID", (req, res) => {
 
 router.delete("/blog/:blogID", (req, res) => {
     Blog.findOneAndDelete(req.params.blogID)
-    .then(blog => {
+    .then(() => {
         console.log("Success deleted");
         res.redirect("/")
     })
